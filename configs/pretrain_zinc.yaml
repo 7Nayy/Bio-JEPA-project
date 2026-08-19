@@ -1,0 +1,36 @@
+# configs/pretrain_zinc.yaml
+# Configuration pour le pré-entraînement Bio-JEPA sur ZINC250k
+#
+# Différences par rapport à configs/default.yaml :
+#   - batch_size: 256      (250k molécules → plus grand batch pour efficacité)
+#   - num_epochs: 100      (250k mol × 100 epochs / 256 batch ≈ 98k steps)
+#   - train_ratio: 0.95    (val set 5% = 12.5k mol pour monitorer la loss)
+#   - Pas d'évaluation par sonde (aucun label dans ZINC)
+
+modele:
+  hidden_dim: 128           # Identique à default.yaml (même archi pour transfert)
+  embedding_dim: 256
+  num_gnn_layers: 4
+  predictor_hidden_dim: 512
+  predictor_num_layers: 2
+  mask_ratio_start: 0.10    # Curriculum de masquage 10% → 30%
+  mask_ratio_end: 0.30
+  dropout: 0.1
+
+entrainement:
+  lr: 0.0001
+  weight_decay: 0.00001
+  num_epochs: 100           # 100 epochs sur 250k mol ≈ 98k steps avec batch=256
+  batch_size: 256           # Grand batch pour amortir le coût de 250k molécules
+  ema_start: 0.996
+  ema_end: 1.0
+  gradient_clip: 1.0
+
+donnees:
+  root: 'data/zinc'         # Cache des graphes ZINC
+  train_ratio: 0.95         # 237 500 train, 12 500 val
+  val_ratio: 0.05
+  seed: 42
+
+checkpoints:
+  dir: 'checkpoints'        # Sauvegardé sous checkpoints/zinc_pretrained.pt

@@ -1,0 +1,43 @@
+# Bio-JEPA — Dépendances Python
+# ─────────────────────────────────────────────────────────
+#
+# Installation standard :
+#   pip install -r requirements.txt
+#
+# Sur Google Colab (ordre important, GPU CUDA) :
+#   !pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#   !pip install torch-geometric
+#   !pip install rdkit pandas scipy pyyaml tqdm chembl-webresource-client
+#
+# Sur macOS (Apple Silicon, MPS) :
+#   pip install torch torchvision
+#   pip install torch-geometric
+#   pip install rdkit pandas scipy pyyaml tqdm chembl-webresource-client
+# ─────────────────────────────────────────────────────────
+
+# Deep learning
+torch>=2.0.0
+torch-geometric>=2.3.0
+
+# Chimio-informatique
+rdkit>=2023.3.1
+
+# Données
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Statistiques (Pearson, Spearman)
+scipy>=1.10.0
+
+# Configuration
+PyYAML>=6.0
+
+# API ChEMBL (optionnel — requis si --target est utilisé)
+chembl-webresource-client>=0.10.8
+
+# Visualisation (umap_viz.py)
+matplotlib>=3.7.0
+umap-learn>=0.5.3
+
+# Utilitaires
+tqdm>=4.65.0

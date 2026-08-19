@@ -1,5 +1,8 @@
-# Raw uncompressed graph cache (kept as .pt.gz instead, see Bio-JEPA-checkpoints/)
-Bio-JEPA-checkpoints/zinc_graphs.pt
+# Raw uncompressed graph cache (kept as .pt.gz instead, see checkpoints/)
+checkpoints/zinc_graphs.pt
+
+# Regenerable ChEMBL graph cache (kept as raw CSV instead, see data/raw/)
+data/chembl/processed/
 
 # Jupyter / Python
 .ipynb_checkpoints/

@@ -1,0 +1,36 @@
+# configs/default.yaml
+# Hyperparamètres par défaut de Bio-JEPA
+# Optimisés pour un entraînement sur Google Colab (GPU T4 ou CPU)
+
+modele:
+  hidden_dim: 128           # Dimension cachée des couches GINEConv
+  embedding_dim: 256        # Dimension de l'espace latent JEPA
+  num_gnn_layers: 4         # Nombre de couches GINEConv
+  predictor_hidden_dim: 512 # Dimension cachée du Predictor MLP
+  predictor_num_layers: 2   # Nombre de couches cachées du Predictor
+  mask_ratio_start: 0.10    # Fraction d'atomes masqués au début (scheduler)
+  mask_ratio_end: 0.30      # Fraction d'atomes masqués à la fin (scheduler)
+  dropout: 0.1              # Dropout dans le GNN et le Predictor
+
+entrainement:
+  lr: 0.0001                # Learning rate initial d'AdamW
+  weight_decay: 0.00001     # Régularisation L2
+  num_epochs: 300           # Nombre d'époques
+  batch_size: 32            # Taille des mini-lots
+  ema_start: 0.996          # Momentum EMA initial (proche de 1 = stable)
+  ema_end: 1.0              # Momentum EMA final
+  gradient_clip: 1.0        # Norme max du gradient (clipping)
+
+donnees:
+  root: 'data/chembl'       # Répertoire de cache PyG
+  train_ratio: 0.80         # Fraction entraînement
+  val_ratio: 0.10           # Fraction validation (test = 1 - train - val)
+  seed: 42                  # Graine pour la reproductibilité
+
+evaluation:
+  lr_sonde: 0.001           # Learning rate de la sonde MLP
+  num_epochs_sonde: 200     # Époques d'entraînement de la sonde MLP
+  hidden_dim_sonde: 256     # Dimension cachée de la sonde MLP
+
+checkpoints:
+  dir: 'checkpoints'        # Dossier de sauvegarde
