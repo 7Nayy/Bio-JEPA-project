@@ -66,8 +66,8 @@ gunzip -k checkpoints/zinc_graphs.pt.gz
 ```
 
 `data/chembl/processed/data.pt` (PyG cache) is not versioned — it's regenerated
-automatically from `data/raw/chembl_data.csv` the first time `data/chembl_dataset.py`
-runs.
+automatically from `data/chembl/raw/chembl_data.csv` the first time
+`data/chembl_dataset.py` runs.
 
 ## Reproducing
 
