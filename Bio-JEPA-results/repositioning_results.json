@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "encoder_checkpoint": "checkpoints/zinc_pretrained.pt",
+    "chembl_target": "CHEMBL251",
+    "n_fda_drugs_screened": 3229,
+    "n_valid_smiles": 3229,
+    "score_stats": {
+      "min": 3.0998,
+      "max": 8.6097,
+      "mean": 5.503,
+      "std": 0.9122
+    },
+    "date": "2026-03-06"
+  },
+  "top20": [
+    {
+      "name": "RALTEGRAVIR",
+      "chembl_id": "CHEMBL254316",
+      "smiles": "Cc1nnc(C(=O)NC(C)(C)c2nc(C(=O)NCc3ccc(F)cc3)c(O)c(=O)n2C)o1",
+      "predicted_pchembl": 8.6097,
+      "indication": "Anti-infectieux systémiques",
+      "rank": 1
+    },
+    {
+      "name": "ENALAPRIL MALEATE",
+      "chembl_id": "CHEMBL1200659",
+      "smiles": "CCOC(=O)[C@H](CCc1ccccc1)N[C@@H](C)C(=O)N1CCC[C@H]1C(=O)O.O=C(O)/C=C\\C(=O)O",
+      "predicted_pchembl": 8.5589,
+      "indication": "Non spécifiée",
+      "rank": 2
+    },
+    {
+      "name": "RALTEGRAVIR POTASSIUM",
+      "chembl_id": "CHEMBL518520",
+      "smiles": "Cc1nnc(C(=O)NC(C)(C)c2nc(C(=O)NCc3ccc(F)cc3)c([O-])c(=O)n2C)o1.[K+]",
+      "predicted_pchembl": 8.5299,
+      "indication": "Non spécifiée",
+      "rank": 3
+    },
+    {
+      "name": "ATALUREN",
+      "chembl_id": "CHEMBL256997",
+      "smiles": "O=C(O)c1cccc(-c2noc(-c3ccccc3F)n2)c1",
+      "predicted_pchembl": 8.365,
+      "indication": "Système musculo-squelettique",
+      "rank": 4
+    },
+    {
+      "name": "MEPENZOLATE",
+      "chembl_id": "CHEMBL524004",
+      "smiles": "C[N+]1(C)CCCC(OC(=O)C(O)(c2ccccc2)c2ccccc2)C1",
+      "predicted_pchembl": 8.288,
+      "indication": "Voies digestives / métabolisme",
+      "rank": 5
+    },
+    {
+      "name": "TIOTROPIUM BROMIDE",
+      "chembl_id": "CHEMBL3545181",
+      "smiles": "C[N+]1(C)[C@@H]2C[C@@H](OC(=O)C(O)(c3cccs3)c3cccs3)C[C@H]1[C@@H]1O[C@@H]12.O.[Br-]",
+      "predicted_pchembl": 8.2685,
+      "indication": "Système respiratoire",
+      "rank": 6
+    },
+    {
+      "name": "IMIDAPRIL",
+      "chembl_id": "CHEMBL317094",
+      "smiles": "CCOC(=O)[C@H](CCc1ccccc1)N[C@@H](C)C(=O)N1C(=O)N(C)C[C@H]1C(=O)O",
+      "predicted_pchembl": 8.2663,
+      "indication": "Système cardiovasculaire",
+      "rank": 7
+    },
+    {
+      "name": "MELPHALAN FLUFENAMIDE HYDROCHLORIDE",
+      "chembl_id": "CHEMBL4297403",
+      "smiles": "CCOC(=O)[C@H](Cc1ccc(F)cc1)NC(=O)[C@@H](N)Cc1ccc(N(CCCl)CCCl)cc1.Cl",
+      "predicted_pchembl": 8.2635,
+      "indication": "Non spécifiée",
+      "rank": 8
+    },
+    {
+      "name": "FEBUXOSTAT",
+      "chembl_id": "CHEMBL1164729",
+      "smiles": "Cc1nc(-c2ccc(OCC(C)C)c(C#N)c2)sc1C(=O)O",
+      "predicted_pchembl": 8.1844,
+      "indication": "Système musculo-squelettique",
+      "rank": 9
+    },
+    {
+      "name": "MELPHALAN FLUFENAMIDE",
+      "chembl_id": "CHEMBL4303060",
+      "smiles": "CCOC(=O)[C@H](Cc1ccc(F)cc1)NC(=O)[C@@H](N)Cc1ccc(N(CCCl)CCCl)cc1",
+      "predicted_pchembl": 8.1581,
+      "indication": "Antinéoplasiques / immunomodulateurs",
+      "rank": 10
+    },
+    {
+      "name": "CLOXACILLIN",
+      "chembl_id": "CHEMBL891",
+      "smiles": "Cc1onc(-c2ccccc2Cl)c1C(=O)N[C@@H]1C(=O)N2[C@@H]1SC(C)(C)[C@@H]2C(=O)O",
+      "predicted_pchembl": 8.1357,
+      "indication": "Anti-infectieux systémiques",
+      "rank": 11
+    },
+    {
+      "name": "TROVAFLOXACIN",
+      "chembl_id": "CHEMBL428",
+      "smiles": "N[C@@H]1[C@H]2CN(c3nc4c(cc3F)c(=O)c(C(=O)O)cn4-c3ccc(F)cc3F)C[C@@H]12",
+      "predicted_pchembl": 8.1139,
+      "indication": "Anti-infectieux systémiques",
+      "rank": 12
+    },
+    {
+      "name": "IOFLUPANE",
+      "chembl_id": "CHEMBL1945778",
+      "smiles": "COC(=O)[C@H]1[C@@H](c2ccc(I)cc2)C[C@@H]2CC[C@H]1N2CCCF",
+      "predicted_pchembl": 8.0915,
+      "indication": "Non spécifiée",
+      "rank": 13
+    },
+    {
+      "name": "IOFLUPANE I 123",
+      "chembl_id": "CHEMBL3989517",
+      "smiles": "COC(=O)[C@H]1[C@@H](c2ccc([123I])cc2)C[C@@H]2CC[C@H]1N2CCCF",
+      "predicted_pchembl": 8.0915,
+      "indication": "Divers",
+      "rank": 14
+    },
+    {
+      "name": "DICLOFENAC SODIUM",
+      "chembl_id": "CHEMBL1034",
+      "smiles": "O=C([O-])Cc1ccccc1Nc1c(Cl)cccc1Cl.[Na+]",
+      "predicted_pchembl": 8.0861,
+      "indication": "Non spécifiée",
+      "rank": 15
+    },
+    {
+      "name": "DICLOFENAC POTASSIUM",
+      "chembl_id": "CHEMBL1200804",
+      "smiles": "O=C([O-])Cc1ccccc1Nc1c(Cl)cccc1Cl.[K+]",
+      "predicted_pchembl": 8.0861,
+      "indication": "Non spécifiée",
+      "rank": 16
+    },
+    {
+      "name": "OXACILLIN",
+      "chembl_id": "CHEMBL819",
+      "smiles": "Cc1onc(-c2ccccc2)c1C(=O)N[C@@H]1C(=O)N2[C@@H]1SC(C)(C)[C@@H]2C(=O)O",
+      "predicted_pchembl": 8.0577,
+      "indication": "Anti-infectieux systémiques",
+      "rank": 17
+    },
+    {
+      "name": "MEPENZOLATE BROMIDE",
+      "chembl_id": "CHEMBL1724",
+      "smiles": "C[N+]1(C)CCCC(OC(=O)C(O)(c2ccccc2)c2ccccc2)C1.[Br-]",
+      "predicted_pchembl": 8.0308,
+      "indication": "Non spécifiée",
+      "rank": 18
+    },
+    {
+      "name": "TIOTROPIUM",
+      "chembl_id": "CHEMBL1900528",
+      "smiles": "C[N+]1(C)[C@@H]2C[C@@H](OC(=O)C(O)(c3cccs3)c3cccs3)C[C@H]1[C@@H]1O[C@@H]12",
+      "predicted_pchembl": 8.0085,
+      "indication": "Non spécifiée",
+      "rank": 19
+    },
+    {
+      "name": "ENZALUTAMIDE",
+      "chembl_id": "CHEMBL1082407",
+      "smiles": "CNC(=O)c1ccc(N2C(=S)N(c3ccc(C#N)c(C(F)(F)F)c3)C(=O)C2(C)C)cc1F",
+      "predicted_pchembl": 7.9619,
+      "indication": "Antinéoplasiques / immunomodulateurs",
+      "rank": 20
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "metadata": {
+    "checkpoint": "checkpoints/best_model.pt",
+    "target": "CHEMBL251",
+    "epochs_finetune": 5,
+    "epochs_probe": 20,
+    "n_runs": 1,
+    "seeds": [
+      0
+    ],
+    "device": "mps"
+  },
+  "variantes": {
+    "V1": {
+      "nom": "Bio-JEPA complet (référence)",
+      "metriques": {
+        "pearson_r": {
+          "mean": 0.6187243461608887,
+          "std": 0.0,
+          "runs": [
+            0.6187243461608887
+          ]
+        },
+        "spearman_r": {
+          "mean": 0.6344233519136592,
+          "std": 0.0,
+          "runs": [
+            0.6344233519136592
+          ]
+        },
+        "rmse": {
+          "mean": 6.75627974398662,
+          "std": 0.0,
+          "runs": [
+            6.75627974398662
+          ]
+        }
+      }
+    },
+    "V2": {
+      "nom": "Sans EMA (copie directe τ=0)",
+      "metriques": {
+        "pearson_r": {
+          "mean": 0.5932191014289856,
+          "std": 0.0,
+          "runs": [
+            0.5932191014289856
+          ]
+        },
+        "spearman_r": {
+          "mean": 0.602758006597789,
+          "std": 0.0,
+          "runs": [
+            0.602758006597789
+          ]
+        },
+        "rmse": {
+          "mean": 6.698342633582223,
+          "std": 0.0,
+          "runs": [
+            6.698342633582223
+          ]
+        }
+      }
+    },
+    "V3": {
+      "nom": "Sans masquage progressif (30%)",
+      "metriques": {
+        "pearson_r": {
+          "mean": 0.6243442893028259,
+          "std": 0.0,
+          "runs": [
+            0.6243442893028259
+          ]
+        },
+        "spearman_r": {
+          "mean": 0.639632157787066,
+          "std": 0.0,
+          "runs": [
+            0.639632157787066
+          ]
+        },
+        "rmse": {
+          "mean": 6.78483690598531,
+          "std": 0.0,
+          "runs": [
+            6.78483690598531
+          ]
+        }
+      }
+    },
+    "V4": {
+      "nom": "Sans stop-gradient",
+      "metriques": {
+        "pearson_r": {
+          "mean": 0.4432973861694336,
+          "std": 0.0,
+          "runs": [
+            0.4432973861694336
+          ]
+        },
+        "spearman_r": {
+          "mean": 0.454262595045114,
+          "std": 0.0,
+          "runs": [
+            0.454262595045114
+          ]
+        },
+        "rmse": {
+          "mean": 6.7597108853605645,
+          "std": 0.0,
+          "runs": [
+            6.7597108853605645
+          ]
+        }
+      }
+    }
+  }
+}

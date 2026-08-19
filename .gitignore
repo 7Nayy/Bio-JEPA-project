@@ -1,0 +1,14 @@
+# Raw uncompressed graph cache (kept as .pt.gz instead, see Bio-JEPA-checkpoints/)
+Bio-JEPA-checkpoints/zinc_graphs.pt
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local tooling
+.claude/
