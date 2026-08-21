@@ -88,3 +88,33 @@ python repositioning.py --checkpoint checkpoints/zinc_pretrained.pt --target CHE
 ```
 
 See [`CLAUDE.md`](CLAUDE.md) for the full command reference and architecture notes.
+
+## Demo interface
+
+A Gradio app (`app.py`) provides a non-technical walkthrough of the project,
+built for presentations/screen recordings — no ML/chemistry background
+assumed.
+
+```bash
+python -m venv venv
+venv\Scripts\activate        # Windows — use `source venv/bin/activate` on macOS/Linux
+pip install -r requirements.txt
+python app.py                # → http://127.0.0.1:7860
+```
+
+It loads `checkpoints/best_model.pt` and the local ChEMBL251 cache
+(`data/chembl/raw/chembl_data.csv`) at startup — no download needed — then
+trains a small MLP probe on the frozen embeddings in a few seconds. Four tabs:
+
+1. **Test a molecule** — enter a SMILES (or pick an example), get a predicted
+   affinity score plus the 5 known molecules the encoder finds most similar.
+2. **Why it's smart** — Bio-JEPA vs. GraphMAE/MolCLR/AttrMasking on few-shot
+   affinity prediction (the same comparison behind the "Key results" above).
+3. **How the AI "sees" molecules** — the precomputed UMAP projections
+   (`results/umap_*.png`), colored by affinity or by chemical scaffold.
+4. **Drug repositioning** — the FDA screening results
+   (`results/repositioning_results.json`) as a ranked table and chart.
+
+Molecule name lookups (tab 1) call the public ChEMBL API on demand and cache
+results in memory; the app still works fully offline, just without names for
+molecules outside the small local list.

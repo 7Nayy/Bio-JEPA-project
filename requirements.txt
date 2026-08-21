@@ -41,3 +41,7 @@ umap-learn>=0.5.3
 
 # Utilitaires
 tqdm>=4.65.0
+
+# Interface de démonstration (app.py)
+gradio>=4.0.0
+plotly>=5.18.0

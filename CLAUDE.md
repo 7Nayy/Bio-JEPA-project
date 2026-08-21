@@ -53,6 +53,9 @@ python few_shot_eval.py \
   --checkpoint checkpoints/zinc_pretrained.pt \
   --target CHEMBL251 \
   --save-json results/few_shot_transfer.json
+
+# Demo interface (Gradio, 4 tabs, non-technical) → http://127.0.0.1:7860
+python app.py
 ```
 
 ## Architecture
@@ -99,3 +102,12 @@ python few_shot_eval.py \
 
 ## Device Support
 Auto-detected: CUDA → MPS (Apple Silicon) → CPU. No code changes needed.
+
+## Demo Interface (app.py)
+Gradio app for non-technical presentations (no ML/chemistry jargon in the UI). Loads `checkpoints/best_model.pt` + the local ChEMBL251 cache at startup, trains a fresh `SondeMLP` probe in-process (few seconds), then serves 4 tabs:
+1. Live prediction — SMILES → predicted affinity + nearest known molecules (with name lookup via ChEMBL API, cached, 5s timeout, falls back to a local name table for the built-in examples if offline).
+2. Few-shot comparison — Bio-JEPA vs. **GraphMAE/MolCLR/AttrMasking** (`results/baselines_graphmae_molclr.json`, `results/attrmasking_fewshot.json`), *not* vs. the supervised-from-scratch GNN baseline. On this dataset the supervised GNN outperforms every frozen-encoder+probe approach at every N (verified directly, not just via `results/few_shot_*.json` which are inconsistent — see below), so a fair "does pre-training help" story requires comparing against other pre-training methods, which Bio-JEPA does win once N ≥ 200.
+3. UMAP — serves the precomputed `results/umap_*.png` figures as-is.
+4. Drug repositioning — reads `results/repositioning_results.json` (FDA screening) into a table + bar chart.
+
+**Known issue in `results/few_shot_*.json`** (not fixed, just avoided in `app.py`): three of the six files (`few_shot_100ep.json`, `few_shot_indomain.json`, `few_shot_transfer.json`) use a different/older schema than the other three and will `KeyError` if parsed with the newer schema; `few_shot_100ep.json` and `few_shot_transfer.json` are byte-identical despite different names. If re-running `few_shot_eval.py` to regenerate these, standardize on the schema used by `few_shot_1000ep.json`.
